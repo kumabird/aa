@@ -1,50 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>System Alert</title>
-<style>
-body {
-  background: black;
-  color: red;
-  font-family: monospace;
-  text-align: center;
-  margin-top: 100px;
-}
-
-#warning {
-  font-size: 40px;
-  animation: blink 0.5s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-#code {
-  margin-top: 20px;
-  color: lime;
-}
-</style>
+<title>Scan Demo</title>
 </head>
 <body>
 
-<div id="warning">⚠ SYSTEM INFECTED ⚠</div>
+<h1>System Scan Simulation</h1>
+<p>This is a harmless demo.</p>
 
-<div id="code"></div>
+<button onclick="openSite()">Open Site</button>
 
 <script>
-let text = "";
-let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-setInterval(() => {
-  text += chars[Math.floor(Math.random()*chars.length)];
-  document.getElementById("code").innerText = text;
-}, 50);
-
-setTimeout(() => {
-  document.getElementById("warning").innerText = "Just kidding 😄";
-}, 5000);
+function openSite() {
+  window.open("https://aa-8wcw.onrender.com/", "_blank");
+}
 </script>
 
 </body>

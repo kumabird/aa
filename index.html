@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>System Alert</title>
+<style>
+body {
+  background: black;
+  color: red;
+  font-family: monospace;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#warning {
+  font-size: 40px;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+#code {
+  margin-top: 20px;
+  color: lime;
+}
+</style>
+</head>
+<body>
+
+<div id="warning">⚠ SYSTEM INFECTED ⚠</div>
+
+<div id="code"></div>
+
+<script>
+let text = "";
+let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+setInterval(() => {
+  text += chars[Math.floor(Math.random()*chars.length)];
+  document.getElementById("code").innerText = text;
+}, 50);
+
+setTimeout(() => {
+  document.getElementById("warning").innerText = "Just kidding 😄";
+}, 5000);
+</script>
+
+</body>
+</html>
